@@ -7,7 +7,7 @@ module Geokit
       private
 
       # ==== OPTIONS
-      # * :language - See: https://developers.google.com/maps/documentation/geocoding
+      # * :language - See: https://developers.google.cn/maps/documentation/geocoding
       def self.do_reverse_geocode(latlng, options = {})
         latlng = LatLng.normalize(latlng)
         url = submit_url("latlng=#{Geokit::Inflector.url_escape(latlng.ll)}", options)
@@ -15,7 +15,7 @@ module Geokit
       end
 
       # ==== OPTIONS
-      # * :language - See: https://developers.google.com/maps/documentation/geocoding
+      # * :language - See: https://developers.google.cn/maps/documentation/geocoding
       # * :bias - This option makes the Google Geocoder return results biased to a particular
       #           country or viewport. Country code biasing is achieved by passing the ccTLD
       #           ('uk' for .co.uk, for example) as a :bias value. For a list of ccTLD's,
@@ -68,7 +68,7 @@ module Geokit
           url_with_key = query_string + "&key=#{api_key}"
           "#{protocol}://maps.googleapis.com" + url_with_key
         else
-          "#{protocol}://maps.google.com" + query_string
+          "#{protocol}://maps.google.cn" + query_string
         end
       end
 
